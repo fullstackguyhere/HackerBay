@@ -4,7 +4,6 @@ var jwt = require('jsonwebtoken');
 var sequelize = new Sequelize('postgres://postgres:root@localhost/DB');
 const uuid = require('uuid/v4');
 
-
 var User = sequelize.define('users', {
     userId: {
         type: Sequelize.STRING,
