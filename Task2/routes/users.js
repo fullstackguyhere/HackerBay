@@ -1,9 +1,7 @@
-var mongoose = require('mongoose');
 var router = require('express').Router();
 var passport = require('passport');
 var User = require('../models/User');
-var auth = require('../auth');
-
+require('../config/passport');
 router.post('/user/login', function(req, res, next){
   if(!req.body.user.email){
     return res.status(422).json({errors: {email: "can't be blank"}});
@@ -27,10 +25,9 @@ router.post('/user/login', function(req, res, next){
 
 
 router.post('/user/signup', function(req, res, next){
-  User.findOne({ where: { username: req.body.user.username } }).then(function(user){
+  User.findOne({ where: { userId: req.body.user.userId } }).then(function(user){
     if(!user){
       User.create({
-        username: req.body.user.username,
         email: req.body.user.email,
         password: req.body.user.password})
       .then(user => {

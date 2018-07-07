@@ -19,7 +19,7 @@ app.use(errorhandler());
 
 require('./models/User');
 
-app.use(require('./routes/index'));
+app.use(require('./routes/users'));
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
