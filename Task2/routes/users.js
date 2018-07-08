@@ -2,6 +2,7 @@ var router = require('express').Router();
 var passport = require('passport');
 var User = require('../models/User');
 require('../config/passport');
+
 router.post('/user/login', function(req, res, next){
   if(!req.body.user.email){
     return res.status(422).json({errors: {email: "can't be blank"}});
