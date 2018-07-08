@@ -2,13 +2,12 @@ var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var sequelize = new Sequelize('postgres://postgres:root@localhost/DB');
-const uuid = require('uuid/v4');
 
 var User = sequelize.define('users', {
     userId: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: true
+        type: Sequelize.UUID,
+        primaryKey: true,
+        defaultValue: Sequelize.UUIDV4
     },
     email: {
         type: Sequelize.STRING,
@@ -24,7 +23,6 @@ var User = sequelize.define('users', {
       beforeCreate: (user) => {
         const salt = bcrypt.genSaltSync();
         user.password = bcrypt.hashSync(user.password, salt);
-        user.userId = uuid();
       }
     }        
 });
