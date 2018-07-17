@@ -10,7 +10,7 @@ install:
   - cd ..
 before_script:
   - psql -c 'create database DB;' -U postgres
-script:
+script: 
 \  - cd Task1
   - npm start & 
   - npm test
