@@ -1,6 +1,6 @@
 var should = require('chai').should(),
     supertest = require('supertest'),
-    api = supertest('http://localhost:3001');
+    api = supertest('http://localhost:5000');
 
 const correctUserCredentials = {"user":{"email":"asq@b.com", "password":"asdsadasda"}};
 const incorrectUserCredentials = {"user":{"email":"asasdadasq@b.com", "password":"asd3243sadasda"}};
