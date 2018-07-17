@@ -38,7 +38,6 @@ router.post('/user/signup', function(req, res, next){
         res.status(400).json({errors: {error: error}});
       });
     }
-
     else
     {
       return res.status(400).json({errors: {error: "User already exists."}});
