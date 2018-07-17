@@ -6,7 +6,7 @@ const correctUserCredentials = {"user":{"email":"asq@b.com", "password":"asdsada
 const incorrectUserCredentials = {"user":{"email":"asasdadasq@b.com", "password":"asd3243sadasda"}};
 const blankEmail = {"user":{"password":"asd3243sadasda"}};
 const blankPassword = {"user":{"email":"asasdadasq@b.com"}};
-const signUpUserCredentials = {"user":{"email":"q4@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
+const signUpUserCredentials = {"user":{"email":"q55@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
 
 describe('Testing User Api',function(){
     it('Testing login - +ve', function(done){
