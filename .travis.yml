@@ -4,11 +4,13 @@ node_js:
 install:
   - cd Task1
   - npm install
-  - cd ..\Task2
+  - cd ..
+  - cd Task2
   - npm install
   - cd ..
 script:
   - cd Task1
   - npm test
-  - cd ..\Task2
+  - cd ..
+  - cd Task2
   - npm test
