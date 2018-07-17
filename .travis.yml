@@ -12,9 +12,7 @@ script:
   - cd Task1
   - npm start & 
   - npm test
-  - npm stop
   - cd ..
   - cd Task2
   - npm start & 
   - npm test
-  - npm stop
