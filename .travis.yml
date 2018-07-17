@@ -10,8 +10,7 @@ install:
   - cd ..
 services:
   - postgresql
-before_script:
-  - psql -c "CREATE DATABASE postgres;" -U postgres
+
 script: 
   - cd Task1
   - npm start & 
