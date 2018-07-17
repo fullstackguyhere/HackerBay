@@ -9,7 +9,8 @@ install:
   - npm install
   - cd ..
 before_script:
-  - psql -c 'create database DB;' -U postgres
+  - psql -c "CREATE DATABASE DB;" -U postgres
+  - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
 script: 
   - cd Task1
   - npm start & 
