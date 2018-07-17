@@ -17,5 +17,5 @@ script:
   - npm test
   - cd ..
   - cd Task2
-  - npm start 
+  - npm start &
   - npm test
