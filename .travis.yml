@@ -10,6 +10,12 @@ install:
   - cd ..
 services:
   - postgresql
+addons:
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
 before_script:
   - psql -c "CREATE DATABASE DB;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
