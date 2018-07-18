@@ -16,7 +16,6 @@ describe('Testing User Api',function(){
         .expect('Content-Type', /json/)
         .end(function(err, res) {
             if (err) return done(err);
-            console.log(res);
             res.body.user.should.have.property('userId');
             res.body.user.should.have.property('email');
             res.body.user.should.have.property('token');
