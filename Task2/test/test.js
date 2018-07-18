@@ -10,7 +10,6 @@ const signUpUserCredentials = {"user":{"email":"q5esfdf5@b.com", "password":"asd
 
 describe('Testing User Api',function(){
     it('Testing signup - +ve', function(done){
-        this.timeout(50000);
         supertest(app).post('/user/signup')
         .send(signUpUserCredentials)
         .expect(200)
