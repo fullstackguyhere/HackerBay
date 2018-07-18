@@ -26,7 +26,7 @@ describe('Testing User Api',function(){
         }
         catch(error)
         {
-            console.log(error);
+            console.log(error+'');
             done(error);
         }
     });
