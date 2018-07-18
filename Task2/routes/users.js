@@ -26,7 +26,7 @@ router.post('/user/login', function(req, res, next){
 
 
 router.post('/user/signup', function(req, res, next){
-  User.findOne({ where: { userId: req.body.user.userId } }).then(function(user){
+  User.findOne({ where: { email: req.body.user.email } }).then(function(user){
     if(!user){
       User.create({
         email: req.body.user.email,
