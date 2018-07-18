@@ -6,7 +6,7 @@ var should = require('chai').should(),
 const incorrectUserCredentials = {"user":{"email":"asasdadasq@b.com", "password":"asd3243sadasda"}};
 const blankEmail = {"user":{"password":"asd3243sadasda"}};
 const blankPassword = {"user":{"email":"asasdadasq@b.com"}};
-const signUpUserCredentials = {"user":{"email":"v1@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
+const signUpUserCredentials = {"user":{"email":"jui123@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
 
 describe('Testing User Api',function(){
     it('Testing signup - +ve', function(done){
