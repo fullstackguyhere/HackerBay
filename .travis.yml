@@ -15,9 +15,7 @@ before_script:
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
 script: 
   - cd Task1
-  - npm start & 
   - npm test
-  - npm stop
   - cd ..
   - cd Task2
   - npm test
