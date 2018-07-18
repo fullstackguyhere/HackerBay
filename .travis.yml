@@ -1,7 +1,8 @@
 language: node_js
 node_js:
  - "stable" 
-install:
+ install:
+  - npm install -g codecov
   - cd Task1
   - npm install
   - cd ..
@@ -19,3 +20,5 @@ script:
   - cd ..
   - cd Task2
   - npm test
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov
