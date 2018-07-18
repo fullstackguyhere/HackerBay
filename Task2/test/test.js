@@ -10,25 +10,15 @@ const signUpUserCredentials = {"user":{"email":"jui123@b.com", "password":"asdsa
 
 describe('Testing User Api',function(){
     it('Testing signup - +ve', function(done){
-        try
-        {
             supertest(app).post('/user/signup')
             .send(signUpUserCredentials)
             .expect(200)
             .expect('Content-Type', /json/)
             .end(function(err, res) {
-                console.log(res);
-                if (err) return done(err);
-                res.body.user.should.have.property('userId');
                 res.body.user.should.have.property('email');
                 res.body.user.should.have.property('token');
                 done();
                 });
-        }
-        catch(error)
-        {
-            done(error);
-        }
     });
 
     it('Testing login - +ve', function(done){
