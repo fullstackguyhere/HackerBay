@@ -8,7 +8,7 @@ install:
   - cd Task2
   - npm install
   - cd ..
-  - npm install -g codecov
+  - npm install -g codecov istanbul
 services:
   - postgresql
 before_script:
