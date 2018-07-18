@@ -1,7 +1,7 @@
 var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-var sequelize = new Sequelize('postgres://foo:bar@localhost/test_db');
+var sequelize = new Sequelize('postgres://foo:"bar"@localhost/test_db');
 
 var User = sequelize.define('users', {
     userId: {
@@ -56,6 +56,7 @@ User.prototype.toAuthJSON = function toAuthJSON()
 
 sequelize.sync()
     .then(() => console.log('users table has been successfully created, if one doesn\'t exist'))
-    .catch(error => console.log('This error occured', error));
+    .catch(error => {
+      console.log('This error occured', error);})
 
 module.exports = User;
