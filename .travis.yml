@@ -1,14 +1,14 @@
 language: node_js
 node_js:
  - "stable" 
- install:
-  - npm install -g codecov
+ install: 
   - cd Task1
   - npm install
   - cd ..
   - cd Task2
   - npm install
   - cd ..
+  - npm install -g codecov
 services:
   - postgresql
 before_script:
