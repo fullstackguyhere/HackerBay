@@ -1,16 +1,17 @@
 var should = require('chai').should(),
     supertest = require('supertest'),
-    api = supertest('http://localhost:5000');
+    app =require('../app');
+//supertest(app) = supertest('http://localhost:5000');
 
 const correctUserCredentials = {"user":{"email":"asq@b.com", "password":"asdsadasda"}};
 const incorrectUserCredentials = {"user":{"email":"asasdadasq@b.com", "password":"asd3243sadasda"}};
 const blankEmail = {"user":{"password":"asd3243sadasda"}};
 const blankPassword = {"user":{"email":"asasdadasq@b.com"}};
-const signUpUserCredentials = {"user":{"email":"q55@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
+const signUpUserCredentials = {"user":{"email":"q5esfdf5@b.com", "password":"asdsagfdgfqweqdasda"}}; //change everytime after running tests
 
-describe('Testing User Api',function(){
+describe('Testing User supertest(app)',function(){
     it('Testing login - +ve', function(done){
-        api.post('/user/login')
+        supertest(app).post('/user/login')
         .send(correctUserCredentials)
         .expect(200)
         .expect('Content-Type', /json/)
@@ -22,7 +23,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing login - -ve', function(done){
-        api.post('/user/login')
+        supertest(app).post('/user/login')
         .send(incorrectUserCredentials)
         .expect(400)
         .expect('Content-Type', /json/)
@@ -30,7 +31,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing login - -ve blank-email', function(done){
-        api.post('/user/login')
+        supertest(app).post('/user/login')
         .send(blankEmail)
         .expect(422)
         .expect('Content-Type', /json/)
@@ -38,7 +39,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing login - -ve blank-password', function(done){
-        api.post('/user/login')
+        supertest(app).post('/user/login')
         .send(blankPassword)
         .expect(422)
         .expect('Content-Type', /json/)
@@ -46,7 +47,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing signup - +ve', function(done){
-        api.post('/user/signup')
+        supertest(app).post('/user/signup')
         .send(signUpUserCredentials)
         .expect(200)
         .expect('Content-Type', /json/)
@@ -61,7 +62,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing signup - -ve blank-email', function(done){
-        api.post('/user/signup')
+        supertest(app).post('/user/signup')
         .send(blankEmail)
         .expect(400)
         .expect('Content-Type', /json/)
@@ -69,7 +70,7 @@ describe('Testing User Api',function(){
     });
 
     it('Testing signup - -ve blank-password', function(done){
-        api.post('/user/signup')
+        supertest(app).post('/user/signup')
         .send(blankPassword)
         .expect(400)
         .expect('Content-Type', /json/)
