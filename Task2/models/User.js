@@ -1,8 +1,8 @@
 var Sequelize = require('sequelize');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
-var sequelize = new Sequelize('postgres://foo:bar@localhost/test_db');
-//var sequelize = new Sequelize('postgres://postgres:root@localhost/DB');
+//var sequelize = new Sequelize('postgres://foo:bar@localhost/test_db');
+var sequelize = new Sequelize('postgres://postgres:root@localhost/DB');
 var User = sequelize.define('users', {
     userId: {
         type: Sequelize.UUID,

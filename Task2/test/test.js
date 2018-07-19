@@ -76,4 +76,8 @@ describe('Testing User Api',function(){
         .expect('Content-Type', /json/)
         .end(done);
     });
+
+    after(function() {
+        process.exit(0);
+    });
 });

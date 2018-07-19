@@ -43,4 +43,8 @@ describe('Testing Basic Api',function(){
     it('Testing second get', function(done){
         api.get('/data').expect(200).expect('Content-Type', /json/).expect(postObj,done);
     });
+
+    after(function() {
+        process.exit(0);
+    });
 });
