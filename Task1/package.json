@@ -7,7 +7,8 @@
     "start": "node ./app.js",
     "dev": "nodemon ./app.js",
     "stop": "lsof -ti :3000 | xargs kill",
-    "test":"mocha --exit"
+    "test":"mocha --exit",
+    "coverage":"istanbul cover node_modules/mocha/bin/_mocha ./test/test.js"
   },
   "license": "ISC",
   "dependencies": {

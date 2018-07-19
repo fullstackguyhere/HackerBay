@@ -16,8 +16,7 @@ before_script:
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
 script: 
   - cd Task1
-  - npm test
+  - npm run coverage
   - cd ..
   - cd Task2
-  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter test -- -R spec && codecov
-  - codecov
+  - npm run coverage

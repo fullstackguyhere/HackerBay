@@ -7,7 +7,9 @@
     "start": "node ./app.js",
     "dev": "nodemon ./app.js",
     "stop": "lsof -ti :3000 | xargs kill",
-    "test": "mocha --exit --timeout 15000"
+    "test": "mocha --exit",
+    "coverage":"istanbul cover node_modules/mocha/bin/_mocha ./test/test.js",
+    "showcoverage":"open coverage/lcov-report/index.html"
   },
   "license": "ISC",
   "dependencies": {
@@ -38,6 +40,7 @@
   },
   "devDependencies": {
     "newman": "^3.8.2",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "nyc": "^12.0.2"
   }
 }
