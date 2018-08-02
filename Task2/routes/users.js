@@ -4,11 +4,11 @@ var User = require('../models/User');
 require('../config/passport');
 
 router.post('/user/login', function(req, res, next){
-  if(!req.body.user.email){
+  if(!req.body.email){
     return res.status(422).json({errors: {email: "can't be blank"}});
   }
 
-  if(!req.body.user.password){
+  if(!req.body.password){
     return res.status(422).json({errors: {password: "can't be blank"}});
   }
 
@@ -26,11 +26,11 @@ router.post('/user/login', function(req, res, next){
 
 
 router.post('/user/signup', function(req, res, next){
-  User.findOne({ where: { email: req.body.user.email } }).then(function(user){
+  User.findOne({ where: { email: req.body.email } }).then(function(user){
     if(!user){
       User.create({
-        email: req.body.user.email,
-        password: req.body.user.password})
+        email: req.body.email,
+        password: req.body.password})
       .then(user => {
         return res.json({user: user.toAuthJSON()});
       })
