@@ -1,8 +1,8 @@
 import { AUTH_USER, AUTH_ERROR } from '../actions/types';
 
 const INITIAL_STATE = {
-  authenticated: '',
-  errorMessage: ''
+  authenticated: null,
+  errorMessage: null
 };
 
 export default function(state = INITIAL_STATE, action) {
