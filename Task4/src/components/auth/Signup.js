@@ -42,7 +42,7 @@ class Signup extends Component {
 }
 
 function mapStateToProps(state) {
-  return { errorMessage: state.auth.errorMessage };
+  return { errorMessage: state.errorMessage };
 }
 
 export default compose(
